@@ -3,16 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sign In | Peer Push</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/svg+xml" href="koala.png">
 </head>
 <body>
 
-  <img src="koala.png" alt="Pando the Panda" class="avatar">
+  <img src="/peer_push/assets/koala.png" alt="Pando the Panda" class="avatar">
 
   <div></div>
 
     <div class="container">
+      <div class="top-bar">
+        <a href="#" id="backBtn">&#129056;</a>
+        <a href="/peer_push/home/index.html" id="homeBtn"><img src="https://img.icons8.com/?size=100&id=86527&format=png&color=000000" alt=""></a>
+      </div>
         <h2>Sign Up</h2>
         <form>
           <input type="text" placeholder="Username" required>
@@ -26,8 +31,8 @@
           <button type="submit">Sign Up</button>
         </form>
     
-        <p class="signup-link">Already have an acc? <a href="signin.html">Sign In</a></p>
+        <p class="signup-link">Already have an acc? <a href="signin.html" class="signin-link">Sign In</a></p>
       </div>
-    
+    <script src="signup.js"></script>
 </body>
 </html>

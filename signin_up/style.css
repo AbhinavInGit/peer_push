@@ -81,5 +81,35 @@
   .avatar:hover {
     transform: scale(1.05);
   }
+
+  #backBtn, #homeBtn {
+
+    font-size: 25px;
+    color: #444;
+    text-decoration: none;
+    display: inline-block;
+   
+  }
+  .top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+ 
+ 
+  
+}
+#backBtn:hover {
+  color: black;
+ 
+}
+.top-bar img{
   
   
+    width: 30px;     
+    height: 30px;
+    padding: 3px;
+    border-radius: 50%;
+    
+  
+}
