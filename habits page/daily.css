@@ -1,0 +1,83 @@
+/* Reset some basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f9fbfd;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+  }
+  
+  /* Navbar styling */
+  
+  /* Main container for tasks */
+  .task-view {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  #habitTitle {
+    font-size: 28px;
+    margin-bottom: 25px;
+    color: #37474f;
+  }
+  
+  /* Task list */
+  .day-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .day-list li {
+    background-color: #ffffff;
+    margin: 10px auto;
+    padding: 15px 20px;
+    border-radius: 12px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.06);
+    width: 90%;
+    max-width: 600px;
+    transition: background-color 0.2s ease;
+  }
+  
+  .day-list li:hover {
+    background-color: #e0f2f1;
+    cursor: pointer;
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e0f7fa;
+    padding: 15px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #00796b;
+  }
+  
+  /* Right section containing both texts */
+  .handle-group {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+  }
+  
+  .handle {
+    font-size: 14px;
+    color: #009688;
+  }
+
+  
+  
+  
