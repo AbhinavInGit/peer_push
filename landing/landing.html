@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Habit League</title>
   <link rel="stylesheet" href="landing.css">
-  <script defer src="script.js"></script>
+  <script defer src="landing.js"></script>
 </head>
 <body>
 
@@ -53,8 +53,9 @@
     <div class="form">
       <h3>Add a Player</h3>
       <input type="text" id="playerName" placeholder="Name" />
-      <input type="number" id="playerStreak" placeholder="Streak" min="0" />
-      <button class="add"> <a href="/habits page/habit.html">Add</a></button>
+      <input type="number" id="playerStreak" placeholder="Streak" min="0" max="30" />
+      <div class="error-message" id="errorMsg">Streak cannot be more than 30!</div>
+      <button class="add" id="addBtn"> <a href="/habits page/habit.html">Add</a></button>
     </div>
   </section>
 
