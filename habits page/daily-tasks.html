@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <title>Your Daily Habit Tasks</title>
-  <link rel="stylesheet" href="daily.css">
+  <link rel="stylesheet" href="daily.css" />
 </head>
 <body>
   <header class="navbar">
     <div class="logo">Peer Push</div>
     <div class="handle-group">
-      <p class="handle"><a href="/home/index.html">Home</a> </p>
+      <p class="handle"><a href="/home/index.html">Home</a></p>
       <p class="handle">Find a friend</p>
       <span class="handle">@ChallengeYourself</span>
     </div>
@@ -17,18 +17,21 @@
 
   <main class="task-view">
     <h1 id="habitTitle">Loading...</h1>
-    <div class="day-buttons" id="dayButtons"></div>
+    <p id="progressText">✅ You have completed 0 out of 30 days.</p>
+    <ul id="taskList" class="day-list"></ul>
   </main>
 
-  <div id="taskModal" class="modal">
-    <div class="modal-content">
-      <span class="close-btn" id="closeModal">&times;</span>
-      <h2 id="modalDayTitle"></h2>
-      <ul id="taskList" class="day-list"></ul>
+  <div id="taskPopup" class="popup hidden">
+    <div class="popup-content">
+      <h2 id="popupTitle">Tasks for Day</h2>
+      <ul id="popupTasks"></ul>
+      <label><input type="checkbox" id="completeCheckbox" /> Mark as completed</label>
+      <button id="closePopup">Close</button>
     </div>
   </div>
 
   <script src="daily.js"></script>
 </body>
 </html>
+
 
