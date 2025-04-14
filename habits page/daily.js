@@ -1,25 +1,15 @@
-const habit = localStorage.getItem('selectedHabit');
+const habit = localStorage.getItem('selectedHabit') || "Coding";
 document.getElementById('habitTitle').textContent = `Daily Tasks for ${habit}`;
 
 const taskMap = {
   "Coding": [
-    "Solve one problem",
-    "Review yesterday's code",
-    "Push to GitHub",
-    "Refactor an old solution",
-    "Watch a tutorial",
-    "Take coding notes",
-    "Solve a new type of problem",
-    "Do a mock interview question",
-    "Create a mini project",
-    "Write clean documentation",
-    "Contribute to open source",
-    "Learn a new JS concept",
-    "Explore a library",
-    "Debug without help",
-    "Do a timed challenge",
-    "Review and reflect"
+    "Solve one problem", "Review yesterday's code", "Push to GitHub",
+    "Watch a tutorial", "Work on side project", "Code refactor",
+    "Read documentation", "Learn new algorithm", "Debug a problem",
+    "Practice system design", "Explore Git commands", "Do a mock interview",
+    "Write tests", "Code review a friend", "Clean up folders", "Automate something"
   ],
+
   "Studying": [
     "Study 1 chapter",
     "Make revision notes",
@@ -113,13 +103,45 @@ const taskMap = {
 };
 
 
+const totalDays = 16;
+const dayButtonsContainer = document.getElementById('dayButtons');
 const taskList = document.getElementById('taskList');
-if (taskMap[habit]) {
-  taskMap[habit].forEach((task, index) => {
-    const li = document.createElement('li');
-    li.textContent = `Day ${index + 1}: ${task}`;
-    taskList.appendChild(li);
-  });
-} else {
-  taskList.innerHTML = "<li>No tasks found.</li>";
+const modal = document.getElementById('taskModal');
+const closeModalBtn = document.getElementById('closeModal');
+const modalDayTitle = document.getElementById('modalDayTitle');
+
+for (let i = 1; i <= totalDays; i++) {
+  const btn = document.createElement('button');
+  btn.textContent = `Day ${i}`;
+  btn.addEventListener('click', () => showTasksForDay(i));
+  dayButtonsContainer.appendChild(btn);
 }
+
+function showTasksForDay(day) {
+  modalDayTitle.textContent = `Tasks for Day ${day}`;
+  taskList.innerHTML = '';
+
+  const tasks = taskMap[habit];
+  if (tasks && tasks[day - 1]) {
+    const li = document.createElement('li');
+    li.textContent = tasks[day - 1];
+    taskList.appendChild(li);
+  } else {
+    const li = document.createElement('li');
+    li.textContent = "No task found for this day.";
+    taskList.appendChild(li);
+  }
+
+  modal.style.display = "block";
+}
+
+closeModalBtn.onclick = () => {
+  modal.style.display = "none";
+};
+
+window.onclick = (event) => {
+  if (event.target === modal) {
+    modal.style.display = "none";
+  }
+};
+
